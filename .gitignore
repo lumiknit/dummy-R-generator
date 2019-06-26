@@ -1,0 +1,5 @@
+.idea
+target/
+test/
+dummy-R-generator.jar
+.class

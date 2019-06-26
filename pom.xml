@@ -1,0 +1,49 @@
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsl="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>lumi.dummy.R</groupId>
+  <artifactId>dummy-R-generator</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+  <name>Dummy R.java Generator</name>
+
+  <properties>
+    <deploy.target.dir>.</deploy.target.dir>
+    <lib.dir>lib</lib.dir>
+    <jar.name>dummy-R-generator</jar.name>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <finalName>${jar.name}</finalName>
+          <outputDirectory>${deploy.target.dir}</outputDirectory>
+          <archive>
+            <manifest>
+              <mainClass>lumi.dummy.R.MainClass</mainClass>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix></classpathPrefix>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
